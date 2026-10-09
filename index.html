@@ -23,14 +23,18 @@
     <article id="about" class="card">
       <span class="badge">New</span>
       <h2>About Me</h2>
-      <figure>
-        <img src="images/image.webp" alt="Photo of Beenish Kashif" width="180">
-        <figcaption>That's me!</figcaption>
-      </figure>
-      <p>Hi, I'm Beenish Kashif, a BSCS (2024) student at Qarshi University. I'm taking CIT331 to learn how to build and structure real web pages. Outside of class, I enjoy reading books. For web docs, I use <a href="https://developer.mozilla.org">MDN Web Docs</a>.</p>
-      <blockquote>
-        <p>"The best way to learn is by building."</p>
-      </blockquote>
+      <div class="about-body">
+        <figure>
+          <img src="images/image.webp" alt="Photo of Beenish Kashif" width="180">
+          <figcaption>That's me!</figcaption>
+        </figure>
+        <div>
+          <p>Hi, I'm Beenish Kashif, a BSCS (2024) student at Qarshi University. I'm taking CIT331 to learn how to build and structure real web pages. Outside of class, I enjoy reading books. For web docs, I use <a href="https://developer.mozilla.org">MDN Web Docs</a>.</p>
+          <blockquote>
+            <p>"The best way to learn is by building."</p>
+          </blockquote>
+        </div>
+      </div>
     </article>
 
     <section id="skills" class="card">
@@ -56,8 +60,7 @@
 
     <aside class="card fun-fact">
       <h2>Fun Fact</h2>
-      <p>[I process millions of lines of text and search the live internet in a fraction of a second, yet I do not possess a physical body, a favorite food, or a childhood memory.
-If you meant to share a fun fact about yourself for an icebreaker or interview, tell me a bit about your hobbies, past jobs, or hidden talents, and I can help you write a great one!]</p>
+      <p>[Write one interesting, true fact about yourself here.]</p>
     </aside>
 
     <section id="media" class="card">
@@ -75,33 +78,50 @@ If you meant to share a fun fact about yourself for an icebreaker or interview, 
         <fieldset>
           <legend>Send me a message</legend>
 
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required>
+          <div class="row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
 
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
-
-          <label for="topic">Topic</label>
-          <select id="topic" name="topic">
-            <option value="general">General</option>
-            <option value="feedback">Feedback</option>
-            <option value="bug">Report a Bug</option>
-          </select>
+          <div class="field">
+            <label for="topic">Topic</label>
+            <select id="topic" name="topic">
+              <option value="general">General</option>
+              <option value="feedback">Feedback</option>
+              <option value="bug">Report a Bug</option>
+            </select>
+          </div>
 
           <p>Preferred reply method:</p>
-          <label><input type="radio" name="reply" value="email" checked> Email</label>
-          <label><input type="radio" name="reply" value="phone"> Phone</label>
+          <div class="radio-group">
+            <label><input type="radio" name="reply" value="email" checked> Email</label>
+            <label><input type="radio" name="reply" value="phone"> Phone</label>
+          </div>
 
-          <label><input type="checkbox" id="subscribe" name="subscribe"> Subscribe to updates</label>
+          <div class="field">
+            <label><input type="checkbox" id="subscribe" name="subscribe"> Subscribe to updates</label>
+          </div>
 
-          <label for="callback-date">Preferred callback date</label>
-          <input type="date" id="callback-date" name="callback-date">
+          <div class="field">
+            <label for="callback-date">Preferred callback date</label>
+            <input type="date" id="callback-date" name="callback-date">
+          </div>
 
-          <label for="urgency">Urgency (1 = whenever, 10 = right now)</label>
-          <input type="range" id="urgency" name="urgency" min="1" max="10" value="5">
+          <div class="field">
+            <label for="urgency">Urgency (1 = whenever, 10 = right now)</label>
+            <input type="range" id="urgency" name="urgency" min="1" max="10" value="5">
+          </div>
 
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="4" required minlength="10"></textarea>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required minlength="10"></textarea>
+          </div>
 
           <button type="submit">Send</button>
         </fieldset>
