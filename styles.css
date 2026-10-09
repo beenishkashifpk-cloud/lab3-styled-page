@@ -33,3 +33,123 @@ body {
   color: var(--text);
   background: var(--bg);
 }
+
+/* =========================================================
+   TASK 2: Selectors & the Cascade
+   ========================================================= */
+
+/* ---------- Step 2.1: Headings ---------- */
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--brand-dark);
+  line-height: 1.2;
+}
+h2 {
+  font-size: 1.5rem;
+  margin: 0 0 var(--space);
+}
+
+/* ---------- Step 2.2: Header ---------- */
+.site-header {
+  background: var(--brand-dark);
+  color: #fff;
+  padding: var(--space) 24px;
+}
+.site-header h1 {
+  color: #fff;
+  margin: 0;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 4px 8px;
+}
+
+/* ---------- Step 2.3: Cards ---------- */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+/* ---------- Step 2.4: ID selector ---------- */
+#about {
+  border-left: 4px solid var(--brand);
+}
+
+/* ---------- Step 2.5: Combinators ---------- */
+form > fieldset {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+h2 + p {
+  margin-top: 0;
+}
+
+label + input, label + select, label + textarea {
+  display: block;
+  width: 100%;
+  margin-top: 4px;
+}
+
+/* ---------- Step 2.6: Attribute selectors ---------- */
+input[required], textarea[required] {
+  border-left: 4px solid var(--accent);
+}
+
+input[type="email"] {
+  background: #f0f6ff;
+}
+
+/* ---------- Step 2.7: Pseudo-classes ---------- */
+a, button {
+  transition: background 0.2s, color 0.2s;
+}
+a:hover {
+  text-decoration: underline;
+}
+nav a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.tags li:nth-child(even) {
+  background: #e7f7f1;
+}
+#timeline li:first-child {
+  font-weight: 700;
+}
+#timeline li:last-child {
+  color: var(--accent);
+}
+
+/* ---------- Step 2.8: Pseudo-elements ---------- */
+h2::before {
+  content: "\00BB\00A0";
+  color: var(--accent);
+}
+
+blockquote::before {
+  content: "\201C";
+  font-size: 3rem;
+  line-height: 0;
+  vertical-align: -0.4em;
+  margin-right: 4px;
+  color: var(--accent);
+}
+
+a[href^="http"]::after {
+  content: " (external)";
+  font-size: 0.8em;
+  color: var(--muted);
+}
+
+::selection {
+  background: var(--brand);
+  color: #fff;
+}
