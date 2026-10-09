@@ -153,3 +153,6 @@ a[href^="http"]::after {
   background: var(--brand);
   color: #fff;
 }
+   p { color: rgb(223, 26, 26); }
+   .card p { color: blue; }
+   #about p { color: green; }
