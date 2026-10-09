@@ -65,10 +65,14 @@ nav a {
   padding: 4px 8px;
 }
 
-/* ---------- Step 2.3: Cards ---------- */
+/* ---------- Step 2.3 / 3.2: Cards (full version) ---------- */
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 6px rgba(11, 31, 58, 0.08);
 }
 
 /* ---------- Step 2.4: ID selector ---------- */
@@ -152,4 +156,61 @@ a[href^="http"]::after {
 ::selection {
   background: var(--brand);
   color: #fff;
+}
+
+/* =========================================================
+   TASK 3: The Box Model
+   ========================================================= */
+
+/* ---------- Step 3.1: Constrain and center the page ---------- */
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px var(--space);
+}
+
+/* ---------- Step 3.5: Footer and buttons (shorthand) ---------- */
+footer {
+  background: var(--brand-dark);
+  color: #fff;
+  padding: 24px;
+  margin-top: 32px;
+}
+footer p {
+  margin: 0;
+}
+
+button {
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--brand);
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+button:hover {
+  filter: brightness(1.15);
+}
+
+/* ---------- Step 3.7: Display and responsive media ---------- */
+nav a {
+  display: inline-block;
+  border-radius: 6px;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+figure {
+  margin: 0;
+}
+figcaption {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.card img {
+  border-radius: var(--radius);
 }
