@@ -77,13 +77,12 @@ nav a {
   padding: 4px 8px;
 }
 
-/* ---------- Step 2.3 / 3.2 / 4.2: Cards ---------- */
+/* ---------- Step 2.3 / 3.2 / 4.2 / 6.1: Cards ---------- */
 .card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 24px;
-  margin-bottom: 24px;
   box-shadow: 0 2px 6px rgba(11, 31, 58, 0.08);
   position: relative;
 }
@@ -172,13 +171,16 @@ a[href^="http"]::after {
    TASK 3: The Box Model
    ========================================================= */
 
-/* ---------- Step 3.1 / 5.5: Main container ---------- */
+/* ---------- Step 3.1 / 5.5 / 6.1: Main container (grid) ---------- */
 main {
   max-width: 960px;
   margin: 0 auto;
   padding: 24px var(--space);
   flex: 1;
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
 
 /* ---------- Step 3.5 / 5.5: Footer and buttons ---------- */
@@ -334,4 +336,39 @@ figcaption {
   display: flex;
   gap: 16px;
   margin-bottom: 16px;
+}
+
+/* =========================================================
+   TASK 6: Grid & Responsive Design
+   (Media queries must stay at the very end of the file)
+   ========================================================= */
+
+/* ---------- Step 6.3: Tablet, two columns ---------- */
+@media (min-width: 768px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "about   about"
+      "skills  timeline"
+      "media   aside"
+      "contact contact";
+  }
+  #about    { grid-area: about; }
+  #skills   { grid-area: skills; }
+  #timeline { grid-area: timeline; }
+  #media    { grid-area: media; }
+  .fun-fact { grid-area: aside; }
+  #contact  { grid-area: contact; }
+}
+
+/* ---------- Step 6.4: Desktop, three columns ---------- */
+@media (min-width: 1100px) {
+  main {
+    max-width: 1200px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "about   about    aside"
+      "skills  timeline media"
+      "contact contact  contact";
+  }
 }
