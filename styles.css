@@ -11,7 +11,7 @@
 :root {
   --brand: #1e56d6;
   --brand-dark: #0b1f3a;
-  --accent: #0f9d78;
+  --accent: #0b7a5b;
   --bg: #f5f6f4;
   --surface: #ffffff;
   --text: #151a21;
@@ -339,8 +339,21 @@ figcaption {
 }
 
 /* =========================================================
+   TASK 7: Accessibility polish
+   ========================================================= */
+
+/* ---------- Step 7.3: Visible keyboard focus ---------- */
+a:focus-visible, button:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 3px;
+}
+.site-header a:focus-visible {
+  outline-color: #fff;
+}
+
+/* =========================================================
    TASK 6: Grid & Responsive Design
-   (Media queries must stay at the very end of the file)
+   (Media queries must stay near the end of the file)
    ========================================================= */
 
 /* ---------- Step 6.3: Tablet, two columns ---------- */
@@ -370,5 +383,13 @@ figcaption {
       "about   about    aside"
       "skills  timeline media"
       "contact contact  contact";
+  }
+}
+
+/* ---------- Step 7.4: Respect reduced motion (keep at very end) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  a,
+  button {
+    transition: none;
   }
 }
