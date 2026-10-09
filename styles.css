@@ -1,0 +1,35 @@
+/* =========================================================
+   CIT331 Lab 3: styles.css
+   ========================================================= */
+
+/* ---------- 1. Reset ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+/* ---------- 2. Design tokens (CSS variables) ---------- */
+:root {
+  --brand: #1e56d6;
+  --brand-dark: #0b1f3a;
+  --accent: #0f9d78;
+  --bg: #f5f6f4;
+  --surface: #ffffff;
+  --text: #151a21;
+  --muted: #5b6472;
+  --border: #d8dcd6;
+  --space: 16px;
+  --radius: 12px;
+}
+
+/* ---------- 3. Base typography ---------- */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
